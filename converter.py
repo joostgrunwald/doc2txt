@@ -3,7 +3,7 @@ import docx2txt
 import os
 
 #SETTINGS
-directory = "C:\\Users\\joost\\Desktop\\werkmap"
+directory = "C:\\Users\\joost\\Documents\\work\\radboud\\dataset_word_renamed"
 
 #MAIN
 def main():
@@ -34,7 +34,7 @@ def main():
             output_path = output_directory + "\\" + output_filename
 
             # write output
-            with open(output_path, 'w') as f:
+            with open(output_path, 'w', encoding="utf-8") as f:
                 f.write(text)
 
 if __name__ == "__main__":
