@@ -3,13 +3,13 @@ import docx2txt
 import os
 
 #SETTINGS
-directory = "C:\Users\joost\Desktop"
+directory = "C:\\Users\\joost\\Desktop"
 
 #MAIN
-def main()
+def main():
 
     #we write the converted file to here
-    output_directory = directory + "\txt" 
+    output_directory = directory + "\\txt" 
 
     for filename in os.listdir(directory):
         if filename.endswith(".docx"):
@@ -30,4 +30,5 @@ def main()
             with open(output_path, 'w') as f:
                 f.write(text)
 
-        main()
+if __name__ == "__main__":
+    main()
