@@ -14,12 +14,13 @@ def main():
     #we first check if the path exists and make it if it does not exist
     if not os.path.exists(output_directory):
         os.makedirs(output_directory)
-        
+
+    #we iterate over all files in the given folder with extension .docx
     for filename in os.listdir(directory):
-        print(filename)
         if filename.endswith(".docx"):
+            
             #DEBUG
-            print(os.path.join(directory, filename))
+            #print(os.path.join(directory, filename))
              
             # extract text
             input_path = directory + "\\" + filename
@@ -27,14 +28,12 @@ def main():
 
             # correct for double newlines present
             text = text.replace("\n\n", "\n")
-            #text = text.replace("\n\n", "\n")
 
-            print(text)
-
-            # print text
+            # create needed output path
             output_filename = filename.replace(".docx",".txt")
             output_path = output_directory + "\\" + output_filename
-            
+
+            # write output
             with open(output_path, 'w') as f:
                 f.write(text)
 
